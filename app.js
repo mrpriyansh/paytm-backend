@@ -8,7 +8,7 @@ const paymentRoute = require("./paymentRoute");
 const port = 5000;
 app.use(cors());
 app.use(bodyParser.json());
-app.get('/', ()=>{
+app.get('/', (req, res)=>{
     res.send('Server ready')
 })
 app.use("/api", paymentRoute);
