@@ -80,7 +80,7 @@ router.post("/callback", (req, res) => {
 
                     post_res.on("end", function () {
                         res.status("302").redirect(
-                            "http://localhost:3000/successful"
+                            "https://paytm-frontend.vercel.app/successful"
                         );
                         //res.json(response);
                         console.log("Response: ", response);
@@ -115,7 +115,7 @@ router.post("/payment", (req, res) => {
     paytmParams["ORDER_ID"] = uuidv4();
     paytmParams["CUST_ID"] = process.env.CUST_ID || "team";
     paytmParams["TXN_AMOUNT"] = "100";
-    paytmParams["CALLBACK_URL"] = "http://localhost:5000/api/callback";
+    paytmParams["CALLBACK_URL"] = "https://paytm-backend.vercel.app/api/callback";
     paytmParams["EMAIL"] = "abc@gmail.com";
     paytmParams["MOBILE_NO"] = "9452685369";
 
